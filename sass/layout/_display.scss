@@ -1,2 +1,63 @@
 .display {
+  padding: 2rem 0;
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(2, 50%);
+    grid-column-gap: 0.4rem;
+    grid-row-gap: 0.8rem;
+    list-style-type: none;
+  }
+
+  &__card {
+    position: relative;
+    background: #f8f6f6;
+    width: calc(100% - 0.4rem);
+    overflow: hidden;
+
+    &--body {
+      padding: 1rem;
+    }
+
+    &-poster {
+      width: 100%;
+      height: 20rem;
+
+      &--img {
+        height: inherit;
+        width: inherit;
+      }
+    }
+
+    &--title {
+      text-align: center;
+      padding-bottom: 0.4rem;
+    }
+
+    &--footer {
+      margin-top: 1rem;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    &--btn {
+      position: absolute;
+      top: -3rem;
+      right: -4rem;
+      cursor: pointer;
+      background: rgba(11, 12, 82, 0.7);
+      width: 10rem;
+      height: 7rem;
+      transform: rotate(40deg);
+
+      p {
+        position: absolute;
+        color: #fff;
+        text-transform: uppercase;
+        bottom: 15%;
+        left: 40%;
+        transform: rotate(-40deg);
+      }
+    }
+  }
 }
