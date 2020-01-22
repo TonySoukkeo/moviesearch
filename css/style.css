@@ -1,0 +1,49 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit; }
+
+html {
+  box-sizing: border-box;
+  font-family: "Lato", sans-serif; }
+
+.search-input {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  outline: none;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  font-size: 1.3rem; }
+
+.navigation {
+  padding: 1rem 2rem;
+  color: #ccc;
+  background: #313030; }
+
+.banner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 5;
+  background-image: url("../../images/banner.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 60vh; }
+  .banner::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5); }
+  .banner__header {
+    position: relative;
+    z-index: 10;
+    text-transform: uppercase;
+    color: #fff;
+    font-size: 1.3rem; }

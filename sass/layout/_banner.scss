@@ -1,0 +1,29 @@
+.banner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 5;
+  background-image: url("../../images/banner.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 60vh;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+
+  &__header {
+    position: relative;
+    z-index: 10;
+    text-transform: uppercase;
+    color: #fff;
+    font-size: 1.3rem;
+  }
+}
