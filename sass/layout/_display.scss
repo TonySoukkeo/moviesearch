@@ -1,5 +1,5 @@
 .display {
-  padding: 2rem 0;
+  padding: 0.8rem 0;
 
   &__list {
     display: grid;
@@ -7,6 +7,15 @@
     grid-column-gap: 0.4rem;
     grid-row-gap: 0.8rem;
     list-style-type: none;
+
+    @include respond(medium) {
+      padding: 0 2rem;
+      grid-template-columns: repeat(3, 33.33%);
+    }
+
+    @include respond(large) {
+      grid-template-columns: repeat(4, 25%);
+    }
   }
 
   &__card {
@@ -50,6 +59,11 @@
       height: 7rem;
       transform: rotate(40deg);
 
+      &,
+      p {
+        transition: top 0.3s, right 0.3s, left 0.3s, bottom 0.3s, width 0.3s;
+      }
+
       p {
         position: absolute;
         color: #fff;
@@ -57,6 +71,19 @@
         bottom: 15%;
         left: 40%;
         transform: rotate(-40deg);
+      }
+
+      @include respond(medium) {
+        &:hover {
+          top: -2.9rem;
+          right: -3.9rem;
+          width: 11rem;
+        }
+
+        &:hover p {
+          left: 46%;
+          bottom: 20%;
+        }
       }
     }
   }

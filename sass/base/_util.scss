@@ -7,4 +7,12 @@
   padding: 0.5rem 1rem;
   border-radius: 5px;
   font-size: 1.3rem;
+
+  @include respond(medium) {
+    width: 80%;
+  }
+}
+
+.container {
+  padding: 0 2rem;
 }

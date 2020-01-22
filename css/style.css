@@ -20,6 +20,12 @@ body {
   padding: 0.5rem 1rem;
   border-radius: 5px;
   font-size: 1.3rem; }
+  @media only screen and (min-width: 46.88em) {
+    .search-input {
+      width: 80%; } }
+
+.container {
+  padding: 0 2rem; }
 
 .navigation {
   padding: 1rem 2rem;
@@ -46,6 +52,9 @@ body {
     right: 0;
     bottom: 0;
     background-color: rgba(0, 0, 0, 0.5); }
+  .banner__inner {
+    width: 100%;
+    text-align: center; }
   .banner__header {
     position: relative;
     z-index: 10;
@@ -55,13 +64,20 @@ body {
     padding-bottom: 1rem; }
 
 .display {
-  padding: 2rem 0; }
+  padding: 0.8rem 0; }
   .display__list {
     display: grid;
     grid-template-columns: repeat(2, 50%);
     grid-column-gap: 0.4rem;
     grid-row-gap: 0.8rem;
     list-style-type: none; }
+    @media only screen and (min-width: 46.88em) {
+      .display__list {
+        padding: 0 2rem;
+        grid-template-columns: repeat(3, 33.33%); } }
+    @media only screen and (min-width: 70em) {
+      .display__list {
+        grid-template-columns: repeat(4, 25%); } }
   .display__card {
     position: relative;
     background: #f8f6f6;
@@ -91,6 +107,9 @@ body {
       width: 10rem;
       height: 7rem;
       transform: rotate(40deg); }
+      .display__card--btn,
+      .display__card--btn p {
+        transition: top 0.3s, right 0.3s, left 0.3s, bottom 0.3s, width 0.3s; }
       .display__card--btn p {
         position: absolute;
         color: #fff;
@@ -98,3 +117,11 @@ body {
         bottom: 15%;
         left: 40%;
         transform: rotate(-40deg); }
+      @media only screen and (min-width: 46.88em) {
+        .display__card--btn:hover {
+          top: -2.9rem;
+          right: -3.9rem;
+          width: 11rem; }
+        .display__card--btn:hover p {
+          left: 46%;
+          bottom: 20%; } }
