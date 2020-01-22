@@ -38,3 +38,14 @@
 .active {
   display: block;
 }
+
+// Fontawesome icon styling
+.icon {
+  font-size: 2rem;
+  margin-bottom: 0.6rem;
+
+  &--lg {
+    font-size: 10rem;
+    color: #ccc;
+  }
+}

@@ -67,33 +67,43 @@ function movieDetails() {
   $.get(URL + "?i=" + movieId + "&apikey=606fdfe0", data => {
     const output = `
       <div class="popup__close">
-      X
+        &times;
       </div>
-    <div class="popup__image">
-      <img 
-      class="popup__image--poster"
-      src="${data.Poster}" 
-      alt="banner" />
-      </div>
-      <div class="popup__info popup__info--mobile">
-        <h5><b>Rating:</b> <em>${data.Rated}</em></h5>
-        <h5><b>${data.Runtime}</b></h5>
-      </div>
-     </div>
 
-     <div class="popup__info">
+    <div class="popup__header">
+      <div class="popup__image">
+        <img 
+        class="popup__image--poster"
+        src="${data.Poster}" 
+        alt="banner" />
+      </div>
+
+      <div class="popup__details">
+    <div class="popup__info">
       <h5><b>Rating:</b> <em>${data.Rated}</em></h5>
       <h5><b>${data.Runtime}</b></h5>
-     </div>
-
+    </div>  
+    
     <div class="popup__ratings">
-      <h5><b>imdb:</b><em>${data.imdbRating}</em></h5>
+      <div class="popup__ratings--imdb">
+      <i class="fab fa-imdb icon"></i>
+        <h5><b>imdb:</b><em>${data.imdbRating}</em></h5>
+      </div>
+
+      <div class="popup__ratings--metascore">
+      <i class="fas fa-star icon"></i>
       <h5><b>Metascore:</b><em>${data.Metascore}</em></h5>
+      
+      </div>
+      
     </div>
      
-     <div class="popup__genre">
+     <div class="popup__genre container">
       <h4><b>Genre:</b> <em>${data.Genre}</em></h4>
      </div>
+
+    </div>
+    </div>
      <div class="popup__plot">${data.Plot}</div>
     `;
 
