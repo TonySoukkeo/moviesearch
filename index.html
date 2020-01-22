@@ -11,14 +11,15 @@
     <!----------- 
       NAVIGATION 
     ------------->
-    <nav class="navigation">
+    <!-- <nav class="navigation">
       <h2>Movie Finder</h2>
-    </nav>
+    </nav> -->
 
     <!-------------- 
       BANNER SECTION 
     ---------------->
     <section class="banner">
+      <div class="overlay"></div>
       <div class="banner__inner container">
         <h1 class="banner__header">Search for your favorite movies</h1>
         <input type="text" placeholder="Search" class="search-input" />
@@ -30,7 +31,17 @@
     ---------------->
     <section class="display">
       <ul class="display__list"></ul>
+      <div class="overlay">
+        <div class="popup">
+          This is a popup
+        </div>
+      </div>
     </section>
+
+    <!------------------ 
+      MOVIE DETAIL POPUP 
+    ------------------->
+
     <script
       src="https://code.jquery.com/jquery-3.4.1.min.js"
       integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="

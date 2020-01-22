@@ -1,7 +1,14 @@
 const URL = "http://www.omdbapi.com/";
 
 $(document).ready(() => {
+  // Search for movie / show
   $(".search-input").on("keyup", searchMovie);
+
+  // Open up more details for movie / show
+  $(".display__list").on("click", ".display__card--btn", movieDetails);
+
+  // Close out of details modal
+  $(".popup").on("click", ".popup__close", closeDetails);
 });
 
 // Function to search for movie
@@ -17,7 +24,7 @@ function searchMovie(e) {
     } else {
       // Loop through search results and create list items for each
       $.each(data.Search, (index, item) => {
-        output += `        <li class="display__card">
+        output += ` <li class="display__card">
         <div class="display__card-poster">
           <img
             class="display__card-poster--img"
@@ -34,7 +41,7 @@ function searchMovie(e) {
           <p><b>Type:</b> <em>${item.Type}</em></p>
         </div>
 
-        <div class="display__card--btn">
+        <div id=${item.imdbID} class="display__card--btn">
           <p>Info</p>
         </div>
       </li>`;
@@ -44,4 +51,62 @@ function searchMovie(e) {
     // Display output to display list
     $(".display__list").html(output);
   });
+}
+
+// Open popup function
+function movieDetails() {
+  // Activate popup
+  $(".popup").addClass("popup-active");
+
+  // Activate dark overlay
+  $(".overlay").addClass("active");
+
+  const movieId = this.id;
+
+  // Make a request to fetch movie details
+  $.get(URL + "?i=" + movieId + "&apikey=606fdfe0", data => {
+    const output = `
+      <div class="popup__close">
+      X
+      </div>
+    <div class="popup__image">
+      <img 
+      class="popup__image--poster"
+      src="${data.Poster}" 
+      alt="banner" />
+      </div>
+      <div class="popup__info popup__info--mobile">
+        <h5><b>Rating:</b> <em>${data.Rated}</em></h5>
+        <h5><b>${data.Runtime}</b></h5>
+      </div>
+     </div>
+
+     <div class="popup__info">
+      <h5><b>Rating:</b> <em>${data.Rated}</em></h5>
+      <h5><b>${data.Runtime}</b></h5>
+     </div>
+
+    <div class="popup__ratings">
+      <h5><b>imdb:</b><em>${data.imdbRating}</em></h5>
+      <h5><b>Metascore:</b><em>${data.Metascore}</em></h5>
+    </div>
+     
+     <div class="popup__genre">
+      <h4><b>Genre:</b> <em>${data.Genre}</em></h4>
+     </div>
+     <div class="popup__plot">${data.Plot}</div>
+    `;
+
+    // Add html to popup div
+    $(".popup").html(output);
+  });
+}
+
+// Close modal
+function closeDetails() {
+  // Remove class on popup
+  $(".popup").removeClass("popup-active");
+
+  // Remove class on overlay
+  $(".overlay").removeClass("active");
 }
