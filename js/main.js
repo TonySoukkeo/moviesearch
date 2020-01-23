@@ -56,10 +56,10 @@ function searchMovie(e) {
 // Open popup function
 function movieDetails() {
   // Activate popup
-  $(".popup").addClass("popup-active");
+  $(".popup").fadeIn();
 
   // Activate dark overlay
-  $(".overlay").addClass("active");
+  $(".overlay").fadeIn();
 
   const movieId = this.id;
 
@@ -115,8 +115,8 @@ function movieDetails() {
 // Close modal
 function closeDetails() {
   // Remove class on popup
-  $(".popup").removeClass("popup-active");
+  $(".popup").fadeOut();
 
   // Remove class on overlay
-  $(".overlay").removeClass("active");
+  $(".overlay").fadeOut();
 }

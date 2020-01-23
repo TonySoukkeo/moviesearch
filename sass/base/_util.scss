@@ -17,12 +17,6 @@
   padding: 0 2rem;
 }
 
-// Popup active class
-.popup-active {
-  visibility: visible !important;
-  opacity: 1 !important;
-}
-
 // Dark overlay
 .overlay {
   display: none;
@@ -33,10 +27,6 @@
   bottom: 0;
   z-index: 9;
   background: rgba(0, 0, 0, 0.7);
-}
-
-.active {
-  display: block;
 }
 
 // Fontawesome icon styling
