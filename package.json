@@ -1,6 +1,7 @@
 {
   "name": "movie-finder",
   "version": "1.0.0",
+  "homepage": "https://tonysoukkeo.github.io/moviesearch/",
   "description": "Movie Finder",
   "main": "index.js",
   "scripts": {
