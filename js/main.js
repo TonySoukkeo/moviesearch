@@ -1,4 +1,4 @@
-const URL = "http://www.omdbapi.com/";
+const URL = "https://www.omdbapi.com/";
 
 $(document).ready(() => {
   // Search for movie / show
