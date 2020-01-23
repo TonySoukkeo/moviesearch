@@ -128,7 +128,7 @@ body {
   align-items: center;
   position: relative;
   z-index: 5;
-  background-image: url("images/banner.jpg");
+  background-image: url("../images/banner.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
